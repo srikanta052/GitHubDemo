@@ -3,6 +3,7 @@ execution:
   scenario: open_page
 
 scenarios:
+
   open_page:
     browser: Chrome
     timeout: 10s
