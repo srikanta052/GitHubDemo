@@ -1,4 +1,5 @@
-
+https://docs.microsoft.com/en-us/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch?view=vs-2022
+================
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 </Project>
 
