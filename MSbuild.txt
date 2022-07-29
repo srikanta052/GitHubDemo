@@ -2,7 +2,30 @@ https://docs.microsoft.com/en-us/visualstudio/msbuild/walkthrough-creating-an-ms
 ================
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 </Project>
+===========================
 
+<Target Name="CustomAfterBuild" AfterTargets="Build">
+<PropertyGroup>
+     <_OutputCopyLocation>$(OutputPath)..\..\CustomOutput\</_OutputCopyLocation>
+  </PropertyGroup>
+    <ItemGroup>
+      <_FilesToCopy Include="$(OutputPath)**\*"/>
+    </ItemGroup>
+    <Message Text="_FilesToCopy: @(_FilesToCopy)" Importance="high"/>
+    <Message Text="DestFiles:
+        @(_FilesToCopy->'$(_OutputCopyLocation)%(RecursiveDir)%(Filename)%(Extension)')"/>
+a.	<!—Write a build statement which will copy all the output files to a new folder CustomOutput-->
+  </Target>
+  <Target Name="CustomClean" BeforeTargets="Clean">
+<PropertyGroup>
+     <_OutputCopyLocation>$(OutputPath)..\..\CustomOutput\</_OutputCopyLocation>
+  </PropertyGroup>
+    <Message Text="Inside Custom Clean" Importance="high"/>
+    <ItemGroup>
+      <_CustomFilesToDelete Include="$(_OutputCopyLocation)**\*"/>
+    </ItemGroup>
+
+===========================
 
 <ItemGroup>
   <Compile Include="helloworld.cs" />
