@@ -1,0 +1,47 @@
+Create a ASP.NET MVC project using C# and .NET Framework in Visual Studio 2019 Community Edition. Complete the build structure in the following MSBuild Process. Copy the following targets at the end of the .csproj file before </Project>. Run the targets Build and Clean separately and attach the screen shots of the output in PDF format.
+
+  <Target Name="CustomAfterBuild" AfterTargets="Build">
+
+<PropertyGroup>
+
+     <_OutputCopyLocation>$(OutputPath)..\..\CustomOutput\</_OutputCopyLocation>
+
+  </PropertyGroup>
+
+    <ItemGroup>
+
+      <_FilesToCopy Include="$(OutputPath)**\*"/>
+
+    </ItemGroup>
+
+    <Message Text="_FilesToCopy: @(_FilesToCopy)" Importance="high"/>
+
+    <Message Text="DestFiles:
+
+        @(_FilesToCopy->'$(_OutputCopyLocation)%(RecursiveDir)%(Filename)%(Extension)')"/>
+
+a.      <!—Write a build statement which will copy all the output files to a new folder CustomOutput-->
+
+  </Target>
+
+  <Target Name="CustomClean" BeforeTargets="Clean">
+
+<PropertyGroup>
+
+     <_OutputCopyLocation>$(OutputPath)..\..\CustomOutput\</_OutputCopyLocation>
+
+  </PropertyGroup>
+
+    <Message Text="Inside Custom Clean" Importance="high"/>
+
+    <ItemGroup>
+
+      <_CustomFilesToDelete Include="$(_OutputCopyLocation)**\*"/>
+
+    </ItemGroup>
+
+b.      <!—Write a build statement to clean up the files created by the custom build operation with a CustomClean target by using a BeforeTargets attribute and specifying that the custom clean operation runs before the CoreClean target-->
+
+  </Target>
+
+</Project>
