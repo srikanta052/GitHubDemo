@@ -1,3 +1,20 @@
+==============================
+
+CREATE TABLE CUSTOMERS(
+ ID INT NOT NULL,
+ NAME VARCHAR (20) NOT NULL,
+ AGE INT NOT NULL,
+ ADDRESS CHAR (25) ,
+ SALARY DECIMAL (18, 2),
+ PRIMARY KEY (ID)
+);
+
+
+ALTER TABLE CUSTOMER ADD PRIMARY KEY (ID);
+
+
+
+=======================================
 https://docs.microsoft.com/en-us/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch?view=vs-2022
 ================
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
