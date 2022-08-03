@@ -1,3 +1,35 @@
+==========================================
+
+--
+- hosts: AppServer 
+ become: yes
+ tasks:
+ - name: Installs nginx web server
+ Apt: name: nginx state: started update_cache: true
+ notify:
+ - start nginx
+ handlers:
+ - name: start nginx
+ service:
+ name: nginx
+ state: started
+Let’s break the code into segments for a better understanding.
+--- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================================
 - name: Configure webserver with nginx
   hosts: webservers
   become: True
