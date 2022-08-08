@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "please enter the sid of the squre"
+read side
+area=`expr $((side * side))`
+echo $area
+
+=========================================
+
+#!/bin/bash
+clear
+a=10
+b=20
+touch user
+echo "welcome to my first script file"
+total=expr $((a+b))
+echo $total
+wc newfile
+grep my secondfile
+echo $USER >> user
+echo $PATH >> user
+echo $PWD >> user
+echo $HOME >> user
+echo $HOSTNAME >> user
+echo $LANG >> user
+echo $EDITOR >> user
+echo $UID >> user
+echo $SHELL >> user
+hostnamectl >> user
+echo "enter your name"
+read name
+echo "Hello" $name
+
