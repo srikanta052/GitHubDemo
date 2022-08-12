@@ -41,3 +41,9 @@ done
 exit 0
 
 ==============
+
+
+echo "give me two numbers and operators"
+read a b c
+echo $a $c $b | bc
+
