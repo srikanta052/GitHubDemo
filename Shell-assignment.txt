@@ -75,8 +75,9 @@ echo "Reverse number of entered digit is $rev"
 
 11.
 
+#! bin/bash
 echo "The Fibonacci series is : "
-  
+read N a b
 for (( i=0; i<N; i++ ))
 do
     echo -n "$a "
@@ -84,6 +85,8 @@ do
     a=$b
     b=$fn
 done
-# End of for loop
+exit 0
+
+================================================
 
 =========================
