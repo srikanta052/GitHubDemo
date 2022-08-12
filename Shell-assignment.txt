@@ -511,5 +511,8 @@ fi
 done
 
 ====================================
+19
+find -type f -name '*.sh' | while read f; do mv "$f" "${f%.jpg}"; done
 
+========================
 
