@@ -47,3 +47,15 @@ echo "give me two numbers and operators"
 read a b c
 echo $a $c $b | bc
 
+----------------
+7
+
+echo "give me two numbers"
+read a b
+if [ $a -gt $b ];
+then
+echo "a is greater than b"
+else
+echo "b is greater than a"
+fi
+
