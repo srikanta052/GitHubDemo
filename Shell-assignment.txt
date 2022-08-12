@@ -448,6 +448,43 @@ then
 fi
 
 =================================
+32
+
+#!/bin/bash
+
+
+usrid=(`cut -d ":" -f3 /etc/passwd`)  
+if [ $# -gt 0 ]  
+then
+if [ $# -eq 1 ] 
+then
+echo "Error : Please pass 2 arguments through CL.
+Usage : ./30_user_ids.sh 100 200"
+elif [ $1 -gt $2 ]    
+then
+echo "Error : Invalid range. Please enter the valid range through CL."
+else
+count=0  
+for i in ${usrid[@]}  
+	do
+if [ $i -ge $1 -a $i -le $2 ]   
+	then
+  let count=$count+1
+	fi
+	done
+	echo "Total count of user ID between $1 to $2 is : $count"
+	fi
+     else  
+   count=0
+  for i in ${usrid[@]}
+	do
+if [ $i -ge 500 -a $i -le 10000 ]
+	then
+	let count=$count+1
+	fi
+	done
+	echo "Total count of user ID between 500 to 10000 is: $count"
+         fi
 
 
 =============================================================
