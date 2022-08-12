@@ -347,4 +347,32 @@ else
     cat /tmp/info.tmp.01.$$$ |more
 fi
 
+============================
+34.
+
+#!/bin/bash
+
+arr=(`printenv PATH | tr ":" " "`)  
+total=0  
+for i in ${arr[@]}   
+do
+	if [ -d $i ]  
+	then
+		cd $i   
+		count=0  
+		for j in `ls`  
+		do
+			if [ -f $j -a -x $j ]  #
+			then
+				let count=$count+1   
+			fi
+		done
+		echo -e "Current dir: $i\nCurrent count: $count"  
+		let total=$total+$count   
+	fi
+done
+
+===============================
+
+
 =============================================================
