@@ -125,3 +125,35 @@ read $a
 sed '/^$/d' sample
 
 ==============================
+10
+
+#!/bin/bash
+echo "give me a number or string"
+read a
+i=$((${#a}-1))
+echo ${a:$i:1}
+
+=========================
+12
+#!/bin/bash
+echo "Chess Board"
+
+for (( i=1; i<=8; i++))
+do
+        for (( j=1; j<=8; j++))
+        do
+                total=$(($i+$j))
+                temp=$(($total%2))
+                # for alternative blocks
+                if [ $temp -eq 0 ]
+                then
+                        echo -e -n "\033[47m" " "  #white
+                else
+                        echo -e -n "\033[40m" " " #black
+                fi
+        done
+        echo -e -n "\033[0m" " "
+        echo ' '
+done
+
+=================================================
