@@ -134,6 +134,16 @@ i=$((${#a}-1))
 echo ${a:$i:1}
 
 =========================
+12 
+
+#!/bin/bash
+str="this is a string"
+n=${#str}
+echo "Length of the string is : $n "
+
+“echo -n “$str” | wc -c”
+============================
+
 13
 #!/bin/bash
 echo "Chess Board"
