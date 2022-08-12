@@ -17,3 +17,27 @@ do
 
   echo "" #### print the new line ###
 done
+
+2.==
+#!/bin/sh
+c=6;
+m=1;
+for((i=1;i<=5;i++))
+do
+for((k=1;k<=c;k++))
+do
+  echo -n  " "
+done
+for((j=1;j<=i;j++))
+do
+echo -n "$j"
+echo -n " "
+done
+c=$(($c-1))
+echo -e " "
+done
+
+
+exit 0
+
+==============
