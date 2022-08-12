@@ -72,3 +72,18 @@ done
 echo "Reverse number of entered digit is $rev"
 
 =====================================
+
+11.
+
+echo "The Fibonacci series is : "
+  
+for (( i=0; i<N; i++ ))
+do
+    echo -n "$a "
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+# End of for loop
+
+=========================
