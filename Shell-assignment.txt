@@ -451,8 +451,6 @@ fi
 32
 
 #!/bin/bash
-
-
 usrid=(`cut -d ":" -f3 /etc/passwd`)  
 if [ $# -gt 0 ]  
 then
