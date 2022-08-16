@@ -530,4 +530,86 @@ do
 done;
 
 ========================
+===================================
+
+18
+
+#!/bin/bash
+echo "which directory you want to newname"
+read a
+echo "what is the new name want to give  "
+read b
+mv $a $b
+
+
+
+
+20
+
+#!/bin/bash
+echo "what is the file to be displayed"
+read a
+echo "what is the starting line"
+read b
+echo " what is the ending line"
+read c
+sed -n $b,$c"p" $a
+
+
+25
+
+#!/bin/bash
+
+ rand -c 5 -s 1 -n 3
+
+
+26
+
+#!/bin/bash
+echo *
+
+
+
+27
+
+#!/bin/bash
+ echo "please give the name of the log file to be fallowed"
+read a
+tail -f $a
+
+
+
+28
+
+
+#!/bin/bash
+
+getopts a:b:c:
+echo "$1"
+
+
+
+29
+
+#!/bin/bash
+echo "give the name of the filesystem"
+read a
+echo "checking if the file system is mounted or not"
+findmnt $a
+echo "free space in the mounted filesystem"
+findmnt --df
+
+
+
+30
+
+
+#!/bin/bash
+
+
+echo "please provide the directory name"
+read a
+chmod -R 700 $a
+
+==============================
 
